@@ -5,8 +5,10 @@ on:
     - cron: "17 6 * * *"
   workflow_dispatch:
 
+# The org pins GITHUB_TOKEN to read-only and blocks repos from elevating, so the
+# push rides a deploy key scoped to this repo alone — nothing else in the org.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: bump
@@ -17,6 +19,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.TAP_DEPLOY_KEY }}
 
       - name: Rewrite the formula to the latest release
         id: bump
