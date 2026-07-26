@@ -3,28 +3,28 @@
 class Terakota < Formula
   desc "Read-only CLI and MCP server for AppFolio and QuickBooks, with receipts"
   homepage "https://terakota.io"
-  version "1.0.0"
+  version "0.0.1"
   license :cannot_represent
 
   on_macos do
     on_intel do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.0.0/terakota_v1.0.0_darwin_amd64.tar.gz"
-      sha256 "96eeae687ad8b33ddcaea748558c5a2d29dc232b756c934ddc25571d5415295d"
+      url "https://github.com/Terakota-io/terakota/releases/download/v0.0.1/terakota_v0.0.1_darwin_amd64.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
     end
     on_arm do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.0.0/terakota_v1.0.0_darwin_arm64.tar.gz"
-      sha256 "bc0b06c949526f2cbbd3e483e3568f9b726c0c1a079877defd729e89bcedc4a1"
+      url "https://github.com/Terakota-io/terakota/releases/download/v0.0.1/terakota_v0.0.1_darwin_arm64.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.0.0/terakota_v1.0.0_linux_amd64.tar.gz"
-      sha256 "ec952a893dd06a5f51ba54834f0d9b0ff096eb6264d426df7b2453a682e21710"
+      url "https://github.com/Terakota-io/terakota/releases/download/v0.0.1/terakota_v0.0.1_linux_amd64.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
     end
     on_arm do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.0.0/terakota_v1.0.0_linux_arm64.tar.gz"
-      sha256 "d439b4e8ccd08b750c4bac2a300ffab00c66a5aa468f66f9e0b081abf3568222"
+      url "https://github.com/Terakota-io/terakota/releases/download/v0.0.1/terakota_v0.0.1_linux_arm64.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
     end
   end
 
