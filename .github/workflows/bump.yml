@@ -1,0 +1,38 @@
+name: bump
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bump
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rewrite the formula to the latest release
+        id: bump
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/bump.py
+
+      - name: Commit if the formula moved
+        run: |
+          set -eu
+          if git diff --quiet -- Formula/terakota.rb; then
+            echo "no change"
+            exit 0
+          fi
+          git config user.name  "terakota-tap-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/terakota.rb
+          git commit -m "terakota ${{ steps.bump.outputs.tag }}"
+          git push
