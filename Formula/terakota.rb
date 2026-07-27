@@ -43,7 +43,7 @@ class Terakota < Formula
       against Intuit sandbox companies only. AppFolio reads are unaffected.
 
       Get started:
-        terakota company add --company mybooks --base-url https://<yourdomain>.appfolio.com/api/v2
+        terakota company add --company mybooks --base-url https://api.appfolio.com/api/v0
         terakota credentials set --company mybooks
 
       The license and the third-party notices are installed at:
