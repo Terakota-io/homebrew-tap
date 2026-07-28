@@ -3,28 +3,28 @@
 class Terakota < Formula
   desc "Read-only CLI and MCP server for AppFolio and QuickBooks, with receipts"
   homepage "https://terakota.io"
-  version "1.2.1"
+  version "1.3.0"
   license :cannot_represent
 
   on_macos do
     on_intel do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.2.1/terakota_v1.2.1_darwin_amd64.tar.gz"
-      sha256 "54e3c24e1cc5f987731e72899a611af9881d8c1491544d5f7999d6cc68625a28"
+      url "https://github.com/Terakota-io/terakota/releases/download/v1.3.0/terakota_v1.3.0_darwin_amd64.tar.gz"
+      sha256 "6ffb9a3210e6f36000451b52ec9023d5a5038b75f0e5418caac5b0934d16377c"
     end
     on_arm do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.2.1/terakota_v1.2.1_darwin_arm64.tar.gz"
-      sha256 "b18062807db4f1068a2cc955bc130cee04df39e2c9af12320a94b25f0633aedb"
+      url "https://github.com/Terakota-io/terakota/releases/download/v1.3.0/terakota_v1.3.0_darwin_arm64.tar.gz"
+      sha256 "b8573ecf2ccc5fe08dff67299ccf2483947c09d53db1e7fb7fcbfa27aeeb65c2"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.2.1/terakota_v1.2.1_linux_amd64.tar.gz"
-      sha256 "26e919cf98adbd1809e8fffa5d48389117c079a99f3835753d85620abeb2bba3"
+      url "https://github.com/Terakota-io/terakota/releases/download/v1.3.0/terakota_v1.3.0_linux_amd64.tar.gz"
+      sha256 "f4d95245b168b1e16cf880b78133a9e5caa0aa8ff691f477ad2dc4d357cd0a0d"
     end
     on_arm do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.2.1/terakota_v1.2.1_linux_arm64.tar.gz"
-      sha256 "a4f31b41e0c8da8dc68ba34c70b1cfdb9ef87344ec2b4722b323a5ce77ee9c1c"
+      url "https://github.com/Terakota-io/terakota/releases/download/v1.3.0/terakota_v1.3.0_linux_arm64.tar.gz"
+      sha256 "2646b57bc318cec82e8bfa0121d251d6c5cb499a8cf3fd54130c86b6cea3d68a"
     end
   end
 
