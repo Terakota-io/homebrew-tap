@@ -3,28 +3,28 @@
 class Terakota < Formula
   desc "Read-only CLI and MCP server for AppFolio and QuickBooks, with receipts"
   homepage "https://terakota.io"
-  version "1.3.1"
+  version "1.4.0"
   license :cannot_represent
 
   on_macos do
     on_intel do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.3.1/terakota_v1.3.1_darwin_amd64.tar.gz"
-      sha256 "fc26eb2dea13717ed576028465460670a24c1e01f3a624bb910d0c65c8ed0cf2"
+      url "https://github.com/Terakota-io/terakota/releases/download/v1.4.0/terakota_v1.4.0_darwin_amd64.tar.gz"
+      sha256 "f09a3a45fb5980781cf44f53aeb3aefb74defd9cc7998e5e08eac06d3e2a2386"
     end
     on_arm do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.3.1/terakota_v1.3.1_darwin_arm64.tar.gz"
-      sha256 "e2d8639be7c856d829301747b5a332ae78a8f9836f14c82f0ec72495c758825e"
+      url "https://github.com/Terakota-io/terakota/releases/download/v1.4.0/terakota_v1.4.0_darwin_arm64.tar.gz"
+      sha256 "78193e9f087c899e6020637792d300c7e6a58be2a80422854587f86dab18ecd5"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.3.1/terakota_v1.3.1_linux_amd64.tar.gz"
-      sha256 "10bc5ca2d623dcfcbbb068d2b157263891dd3c8df4d83a953ee714dc1d2a5974"
+      url "https://github.com/Terakota-io/terakota/releases/download/v1.4.0/terakota_v1.4.0_linux_amd64.tar.gz"
+      sha256 "1a686533513097c03fc11dfc64615cf7297504df3f8874bfec46ad6e9d78b9ff"
     end
     on_arm do
-      url "https://github.com/Terakota-io/terakota/releases/download/v1.3.1/terakota_v1.3.1_linux_arm64.tar.gz"
-      sha256 "feda3b374bebc42693792bc1ea770f04e44d3e2101fea100aeb591f786d3f5fc"
+      url "https://github.com/Terakota-io/terakota/releases/download/v1.4.0/terakota_v1.4.0_linux_arm64.tar.gz"
+      sha256 "928504ab56959850dc8b06a16fdc8d90af076302ab3830173e752360d2608dd8"
     end
   end
 
@@ -35,12 +35,14 @@ class Terakota < Formula
 
   def caveats
     <<~EOS
-      terakota is read-only by construction and sends nothing to us — no telemetry,
-      no account needed. It reads the AppFolio and QuickBooks accounts you already
-      run, using credentials you supply.
+      terakota is read-only by construction, with zero telemetry. It reads the
+      AppFolio and QuickBooks accounts you already run, using credentials you
+      supply, and reads always run from your machine to the vendor directly.
 
-      QuickBooks is sandbox-only in this release: QuickBooks Online connections run
-      against Intuit sandbox companies only. AppFolio reads are unaffected.
+      AppFolio, local use, and QuickBooks sandbox under your own Intuit app need
+      no terakota account and send nothing to us. Connecting a PRODUCTION
+      QuickBooks company (from v1.4.0) is the exception: it goes through our
+      hosted connect service and a free terakota account.
 
       Get started:
         terakota company add --company mybooks --base-url https://api.appfolio.com/api/v0
