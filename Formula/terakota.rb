@@ -1,7 +1,7 @@
 # Managed by scripts/bump.py — the url/sha256 pairs are rewritten from the
 # published SHA256SUMS of the latest release. Keep the block shape stable.
 class Terakota < Formula
-  desc "Read-only CLI and MCP server for AppFolio and QuickBooks, with receipts"
+  desc "Read-only CLI and MCP server for AppFolio, QuickBooks, and Dialpad, with receipts"
   homepage "https://terakota.io"
   version "1.4.0"
   license :cannot_represent
@@ -36,13 +36,17 @@ class Terakota < Formula
   def caveats
     <<~EOS
       terakota is read-only by construction, with zero telemetry. It reads the
-      AppFolio and QuickBooks accounts you already run, using credentials you
-      supply, and reads always run from your machine to the vendor directly.
+      AppFolio, QuickBooks, and Dialpad accounts you already run, using
+      credentials you supply, and reads always run from your machine to the
+      vendor directly.
 
-      AppFolio, local use, and QuickBooks sandbox under your own Intuit app need
-      no terakota account and send nothing to us. Connecting a PRODUCTION
-      QuickBooks company (from v1.4.0) is the exception: it goes through our
-      hosted connect service and a free terakota account.
+      AppFolio, Dialpad, local use, and QuickBooks sandbox under your own Intuit
+      app need no terakota account and send nothing to us. Connecting a
+      PRODUCTION QuickBooks company (from v1.4.0) is the exception: it goes
+      through our hosted connect service and a free terakota account.
+
+      Dialpad reads (from v1.5.0) use a BYO API key and are snippet-tier:
+      verified against a maintainer-held tenant, not on customer accounts.
 
       Get started:
         terakota company add --company mybooks --base-url https://api.appfolio.com/api/v0
