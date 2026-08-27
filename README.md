@@ -27,9 +27,12 @@ in the release repo. Homebrew's checksum check is not a substitute for that.
 
 Windows is not served here; Homebrew is macOS and Linux only.
 
-> **QuickBooks is sandbox-only in v1.** QuickBooks Online connections in this
-> release run against Intuit **sandbox** companies only. AppFolio reads are
-> unaffected. Everything is read-only by construction.
+> **Two ways to connect QuickBooks (from v1.4.0).** A **production** company
+> connects through our hosted connect service and needs a free terakota account
+> — Intuit refuses loopback redirects on production apps. The account-free path
+> is your **own** registered Intuit application against an Intuit **sandbox**
+> company. AppFolio and Dialpad reads need no account either. Everything is
+> read-only by construction.
 
 ## Staying current
 
@@ -44,5 +47,5 @@ binaries they install are governed by the `EULA.md` shipped inside each release
 archive; the embedded open-source components are covered by
 `THIRD_PARTY_NOTICES`.
 
-We are not affiliated with, endorsed by, or sponsored by AppFolio, Inc. or Intuit
-Inc.; their services are governed by your agreements with them.
+We are not affiliated with, endorsed by, or sponsored by AppFolio, Inc., Intuit
+Inc., or Dialpad, Inc.; their services are governed by your agreements with them.
